@@ -17,14 +17,10 @@ export const StButton = styled.div`
 
     color: ${(props) => props.color};
     background-color: ${(props) => props.backgroundColor};
-  }
-
-  &:nth-child(1) button:active {
-    background-color: #55efc4;
-  }
-
-  &:nth-child(2) button:active {
-    background-color: #fab1a0;
+    &:active {
+      background-color: ${(props) =>
+        props.backgroundColor === "#55efc4" ? "#00cca0e2" : "#f38d86"};
+    }
   }
 
   .large-button {
@@ -33,6 +29,9 @@ export const StButton = styled.div`
     font-weight: 600;
     border: 3px solid ${(props) => props.borderColor};
     background-color: #fff;
+    &:active {
+      background-color: transparent;
+    }
   }
 
   .medium-button {
