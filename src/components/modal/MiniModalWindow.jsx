@@ -1,9 +1,9 @@
 import * as S from "../../styles/MiniModalWindowStyle";
 
-const MiniModalWindow = ({openMiniModalHandler}) => {
+const MiniModalWindow = ({ openMiniModalHandler }) => {
     return (
-        <div onClick={openMiniModalHandler}>
-            <S.ModalDiv></S.ModalDiv>
+        <div>
+            <S.ModalDiv onClick={openMiniModalHandler}></S.ModalDiv>
             <S.ModalComponents>
                 <div>닫기 버튼 1개가 있고,<br />외부 영역을 누르면 모달이 닫혀요.</div>
                 <S.ButtonSet>
