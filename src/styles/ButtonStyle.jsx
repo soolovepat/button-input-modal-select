@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const StButton = styled.div`
   display: flex;
   gap: 10px;
+  align-items: center;
 
   button {
     letter-spacing: 0px;
@@ -19,7 +20,7 @@ export const StButton = styled.div`
     background-color: ${(props) => props.backgroundColor};
     &:active {
       background-color: ${(props) =>
-        props.backgroundColor === "#55efc4" ? "#00cca0e2" : "#f38d86"};
+        props.backgroundcolor === "#55efc4" ? "#00cca0e2" : "#f38d86"};
     }
   }
 
