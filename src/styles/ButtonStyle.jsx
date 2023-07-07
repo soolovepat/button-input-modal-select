@@ -20,7 +20,7 @@ export const StButton = styled.div`
     background-color: ${(props) => props.backgroundColor};
     &:active {
       background-color: ${(props) =>
-        props.backgroundcolor === "#55efc4" ? "#00cca0e2" : "#f38d86"};
+        props.backgroundColor === "#55efc4" ? "#00cca0e2" : "#f38d86"};
     }
   }
 
