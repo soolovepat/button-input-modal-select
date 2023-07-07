@@ -1,40 +1,47 @@
 import React from "react";
 import { useState } from "react";
-import * as S from "../styles/ModalStyle";
 import ModalWindow from "./modal/ModalWindow";
 import MiniModalWindow from "./modal/MiniModalWindow";
+import { StButton } from "../styles/ButtonStyle";
+import { StModalBox } from "../styles/ModalStyle";
 
 const Modal = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openMiniModal, setOpenMiniModal] = useState(false);
 
   const openModalHandler = () => {
-      setOpenModal(!openModal);
-  }
+    setOpenModal(!openModal);
+  };
 
   const openMiniModalHandler = () => {
-      setOpenMiniModal(!openMiniModal);
-  }
+    setOpenMiniModal(!openMiniModal);
+  };
 
   return (
-      <div>
-          <h1>Modal</h1>
-          <S.ModalComponents>
-              <div>
-                  <S.OpenModalButton onClick={openModalHandler}>Open Modal</S.OpenModalButton>
-              </div>
-              {
-                  setOpenModal ? openModal && <ModalWindow openModalHandler={openModalHandler} /> : null
-              }
-              <div>
-                  <S.LargeOpenModalButton onClick={openMiniModalHandler}>Open Modal</S.LargeOpenModalButton>
-              </div>
-              {
-                  setOpenMiniModal ? openMiniModal && <MiniModalWindow openMiniModalHandler={openMiniModalHandler} /> : null
-              }
-          </S.ModalComponents>
-      </div>
-  )
-}
+    <div>
+      <h1>Modal</h1>
+      <StModalBox>
+        <StButton backgroundColor="#55efc4">
+          <button className="small-button" onClick={openModalHandler}>
+            Open Modal
+          </button>
+        </StButton>
+        {setOpenModal
+          ? openModal && <ModalWindow openModalHandler={openModalHandler} />
+          : null}
+        <StButton borderColor="#fab1a0">
+          <button className="large-button" onClick={openMiniModalHandler}>
+            Open Modal
+          </button>
+        </StButton>
+        {setOpenMiniModal
+          ? openMiniModal && (
+              <MiniModalWindow openMiniModalHandler={openMiniModalHandler} />
+            )
+          : null}
+      </StModalBox>
+    </div>
+  );
+};
 
 export default Modal;
