@@ -19,8 +19,12 @@ export const StButton = styled.div`
     background-color: ${(props) => props.backgroundColor};
   }
 
-  button:active {
-    background-color: #ff2929;
+  &:nth-child(1) button:active {
+    background-color: #55efc4;
+  }
+
+  &:nth-child(2) button:active {
+    background-color: #fab1a0;
   }
 
   .large-button {
