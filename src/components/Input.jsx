@@ -10,21 +10,14 @@ const Input = () => {
 
   const onChangeHandler = (event, label) => {
     let value = event.target.value;
-
-    // 숫자와 콤마만 허용
-    value = value.replace(/^0+|[^0-9,]/g, "");
-
-    // 콤마 제거
-    value = value.replace(/,/g, "");
+    if (label === "price") {
+      value = value.replace(/^0+|[^0-9]/g, ""); // 시작점 0과 숫자가 아닌 것을 ""로 치환
+      value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ","); // 3자리 숫자 그룹간 경계를 ,로 치환
+    }
 
     // 한글 입력 시 '0' 유지
     if (label === "price" && value === "") {
       value = "0";
-    }
-
-    // 콤마 추가
-    if (label === "price" && value.length > 3) {
-      value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     setProduct({
@@ -34,7 +27,7 @@ const Input = () => {
   };
 
   const onClickHandler = () => {
-    if (product.name !== "" || product.price !== "") {
+    if (product.name !== "" || product.price !== "0") {
       alert(
         `{ name : ${product.name}, price : ${product.price.replace(/,/g, "")} }`
       );
