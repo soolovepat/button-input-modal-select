@@ -9,5 +9,6 @@ export const StForm = styled.form`
     border-radius: 8px;
     padding-left: 12px;
     padding-right: 12px;
+    margin-right: 10px;
   }
 `;
