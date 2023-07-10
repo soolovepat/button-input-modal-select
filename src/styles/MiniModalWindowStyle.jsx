@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ModalDiv = styled.div`
+export const StModalDiv = styled.div`
     width: 100%;
     height: 100vh;
     inset: 0px;
@@ -9,7 +9,7 @@ export const ModalDiv = styled.div`
     background-color: rgb(221, 221, 221);
 `
 
-export const ModalComponents = styled.div`
+export const StModalComponents = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -22,16 +22,16 @@ export const ModalComponents = styled.div`
     position: absolute;
 `
 
-export const ButtonSet = styled.div`
+export const StButtonSet = styled.div`
     position: absolute;
     top: 12px;
     right: 12px;
-`
 
-export const CloseButton = styled.button`
-    border: 1px solid rgb(221, 221, 221);
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    cursor: pointer;
+    button {
+        border: 1px solid rgb(221, 221, 221);
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
 `
