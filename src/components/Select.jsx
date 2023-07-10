@@ -1,22 +1,22 @@
 import React from "react";
-import * as S from "../styles/SelectStyle";
+import { StSelectLayout, StSelectComponents } from "../styles/SelectStyle";
 
 const Select = () => {
   return (
       <div>
-          <S.SelectLayout>
+          <StSelectLayout>
               <h1>Select </h1>
-              <S.SelectComponents>
+              <StSelectComponents>
                   <div>
-                      <S.SelectButton>
+                      <select>
                           <option>리액트</option>
                           <option>자바</option>
                           <option>스프링</option>
                           <option>리액트네이티브</option>
-                      </S.SelectButton>
+                      </select>
                   </div>
-              </S.SelectComponents>
-          </S.SelectLayout>
+              </StSelectComponents>
+          </StSelectLayout>
       </div>
   )
 }
