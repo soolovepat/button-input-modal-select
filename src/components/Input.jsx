@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StForm } from "../styles/InputStyle";
-import { StButton } from "../styles/ButtonStyle";
+import { StButtonContainer } from "../styles/ButtonStyle";
 
 const Input = () => {
   const [product, setProduct] = useState({
@@ -40,7 +40,7 @@ const Input = () => {
     <StForm>
       <h1>Input</h1>
 
-      <StButton backgroundColor="#55efc4">
+      <StButtonContainer backgroundColor="#55efc4">
         <label>이름</label>
         <input
           value={product.name}
@@ -54,7 +54,7 @@ const Input = () => {
         <button className="small-button" type="button" onClick={onClickHandler}>
           저장
         </button>
-      </StButton>
+      </StButtonContainer>
     </StForm>
   );
 };
